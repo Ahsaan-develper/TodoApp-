@@ -1,6 +1,6 @@
     import React, { Component, useEffect, useState } from 'react'
     const Navbar = ({totalCounter , getData , editId,handleUpdateTask, taskName ,handleAddCounter,  handleReset , totalTask}) => {
-        const [task , setTask] = useState("");
+        const [task , setTask] = useState("");  
         let [time , setTime] = useState(new Date());
 console.log(time);
 
