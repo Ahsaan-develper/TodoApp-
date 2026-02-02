@@ -8,7 +8,7 @@ const TodoProvider = ({children})=>{
     useEffect(()=>{
         setTodoList(handleGetData())
     },[])
-    
+
 
     const handleGetData = ()=> {
     return JSON.parse(localStorage.getItem("todo")) || [];
@@ -38,6 +38,7 @@ const TodoProvider = ({children})=>{
        
     }
 
+
     const handleDecreament = (item)=>{
         let tasks = [...todoList];
         let index = tasks.indexOf(item);
@@ -54,7 +55,6 @@ const TodoProvider = ({children})=>{
         handleSaveData(tasks)
     }
 
-
     const handleReset = () =>{
         let tasks = [...todoList];
         tasks.map((item)=>{
@@ -68,6 +68,8 @@ const TodoProvider = ({children})=>{
 
     const handleEdit = (item)  =>{
        setEditItem(item)
+         document.getElementById("input").classList.remove("hidden");
+        document.getElementById("edit").classList.add("hidden");
     }
 
     const handleUpdateItem = (taskName) =>{
@@ -87,7 +89,7 @@ const TodoProvider = ({children})=>{
             handleUpdateItem,
             editItem,
             handleReset,
-            active : todoList.filter(pre => pre.value > 0).length,
+            active : todoList.filter(pre => pre.value > 0 ? pre.value : pre.value).length,
             length: todoList.length,
             handleSaveData,
             handleAddTask,

@@ -14,23 +14,12 @@ const {handleGetData,handleSaveData , handleAddTask , length , active , handleRe
     },[])
 
 
-    useEffect(()=>{
-        if (editItem){
-            setTaskName(editItem.task);
-        }else{
-            setTaskName("");
-        }
-    },[editItem])
+   
 
 
     const handleSubmit= (e)=>{
         e.preventDefault();
-        if (editItem){
-            handleUpdateItem(taskName)
-        }else{
              handleAddTask (taskName);
-        }
-       
         setTaskName("");
     }
     return (
