@@ -68,8 +68,8 @@ const TodoProvider = ({children})=>{
 
     const handleEdit = (item)  =>{
        setEditItem(item)
-         document.getElementById("input").classList.remove("hidden");
-        document.getElementById("edit").classList.add("hidden");
+        //  document.getElementById("input").classList.remove("hidden");
+        // document.getElementById("edit").classList.add("hidden");
     }
 
     const handleUpdateItem = (taskName) =>{
